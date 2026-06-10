@@ -45,7 +45,8 @@ class FormResponse {
     }
 
     public function getSliderSubmittedStep(string $sliderId): float {
-        return $this->getElement($sliderId, Slider::class)->getSubmittedStep();
+        $element = $this->getElement($sliderId, Slider::class);
+        return $element->getSubmittedStep() ?? $element->getDefaultStep();
     }
 
     public function getStepSliderSubmittedOptionId(string $sliderId): string {
