@@ -43,7 +43,7 @@ class Toggle extends Element {
     }
 
     public function assignResult($result): void {
-        $this->submittedChoice = $result;
+        $this->submittedChoice = (bool) $result;
     }
 
     public function serializeBody(): array {
